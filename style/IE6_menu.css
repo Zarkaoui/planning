@@ -1,0 +1,7 @@
+* html #nav a {
+	width: 100px;
+}
+
+#nav li { 
+	behavior: url('style/IEFixes.htc');
+}

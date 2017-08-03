@@ -1,0 +1,377 @@
+
+
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 16px;	
+}
+
+#companyLogoHeader{
+	background : url(../images/companyLogo.png) no-repeat top left;
+	width: 185px;
+	height: 75px;
+	margin-left: 10px;
+	border-width: 0px;
+	float:left;
+	display:block;
+}
+
+#setupLogoHeader{
+	background : url(../images/setupCalendar.png) no-repeat top left;
+	width: 190px;
+	height: 75px;
+	margin-left: 10px;
+	border-width: 0px;
+	float:left;
+	display:block;
+}
+
+#rightHeaderImage {
+	background : url(../images/top_right.jpg) no-repeat top right;
+	width: 300px;
+	height: 62px;
+	float:right;
+	display:block;
+}
+
+#loginTitle {
+	font-size: 20px;
+	font-weight: bold;
+	float:center;
+	display:block;
+}
+
+#top-menu {
+	clear: both;
+}
+
+#top-menu {
+	height: 27px;
+	min-width: 75em;
+	position: relative;
+	background: #FCB334;
+	padding-left: 20px;
+	border: 0;
+}
+
+sup {
+	font-size: 11px;
+}
+
+/* Start round border styles */
+.outerbox .top .left{
+	float:left;
+	width:8px;
+	height:2px;
+	background: #FAD163 url(../images/topleft.gif) no-repeat top left;
+}
+
+.outerbox .top .right{
+	float:right;
+	width:8px;
+	height:2px;
+	background: #FAD163 url(../images/topright.gif) no-repeat top right;
+}
+
+.outerbox .top .middle{
+	margin:0 8px;
+	background:#FAD163;
+	height:2px;
+}
+.outerbox .bottom .left{
+	float:left;
+	width:8px;
+	height:2px;
+	background: #FAD163 url(../images/bottomleft.gif) no-repeat bottom left;
+}
+
+.outerbox .bottom .right{
+	float:right;
+	width:8px;
+	height:2px;
+	background: #FAD163 url(../images/bottomright.gif) no-repeat bottom right;
+}
+
+.outerbox .bottom .middle{
+	margin:0 8px;
+	background:#FAD163;
+	height:2px;
+}
+.outerbox .maincontent {
+	background-color: white;
+	border:0px solid #FAD163;
+	border-width:0 2px;
+
+	/* Height given to give hasLayout to avoid peekaboo bug in IE */
+	height: auto;
+	/*height: 100%;*/
+}
+
+.outerbox .top div, .outerbox .bottom div{
+	font-size:0;
+}
+.outerbox {
+	margin-top: 10px;
+	margin-left: 15px;
+	width: 98%;
+}
+
+/* End round border styles */
+
+
+
+div.pageTitle {
+	padding: 1px 0px 4px 8px;
+	width:auto;
+	height: 55px;
+	border:0;
+	background-color: #FAD163;
+	color: black;
+	text-align:left;
+	display:block;
+}
+
+div.pageTitleLogin {
+	padding: 1px 0px 4px 8px;
+	width:auto;
+	height: 55px;
+	border:0;
+/*	background-color: #82e0aa;*/
+	background-color: #638CFA;
+	color: black;
+	text-align:center;
+	display:block;
+}
+
+div.formbuttons {
+	text-align: center;
+	width:auto;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:15px;
+	display:block;
+	padding-top: 10px;;
+	padding-bottom: 10px;
+	float:none;
+	border-top: 1px solid #FAD163;
+
+}
+
+input.formButton {
+	background:#999966 none repeat scroll 0 0 !important;
+	border-color:#CCCC99 #666633 #666633 #CCCC99 !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	color:#FFFFFF !important;
+	font-size: 11px;
+	font-weight:bold !important;
+	min-width:75px;
+	width: auto;
+	cursor: default;
+}
+
+input.formButton:hover {
+	border-color: #c63 #c63 #930 #930 !important;
+}
+
+form input.formInputText{
+	border-top-width: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 1px solid #888888;
+}
+
+
+div.requirednotice {
+	margin-left:16px;
+	font-size: 13px;
+}
+
+span.required {
+	color: red;
+}
+
+
+table.data-table {
+	width: 100%;
+	border: none;
+	background-color:#FAD163;
+}
+
+#titreTabListe
+{
+	font-family : Arial;
+	font-size : 13px;
+}
+
+
+.multipleSelect {
+	width: 300px;
+	height: 100px;
+
+}
+
+.joursCal { font-size: 13px; }
+
+.txtLeft { text-align: left; }
+.txtRight { text-align: right; }
+.txtCentrer { text-align: center; }
+
+.petit { font-size: 11px; }
+.txt50 { font-size: 50px; }
+
+.horizCentrer { vertical-align: middle; }
+
+.gras {	font-weight: bold; }
+.italique { font-style: italic; }
+
+.noDeco { text-decoration: none; }
+
+.width10 { width: 10px; }
+.width12 { width: 12px; }
+.width15 { width: 15px; }
+.width20 { width: 20px; }
+.width50 { width: 50px; }
+.width100 { width: 100px; }
+.width150 { width: 150px; }
+.width200 { width: 200px; }
+.width250 { width: 250px; }
+.width400 { width: 400px; }
+.width500 { width: 500px; }
+.width600 { width: 600px; }
+.width700 { width: 700px; }
+.width800 { width: 800px; }
+.width900 { width: 900px; }
+.width15p { width: 15%; }
+.width50p { width: 50%; }
+.width95p { width: 95%; }
+.width100p { width: 100%; }
+
+.vert { color: green; }
+.rouge { color: red; }
+.beige { background-color: #FCFAE1; }
+.orangeClair { background-color: #FFF2C9; }
+.vertClair { background-color: #C4FDD1; }
+
+/* Display Leave Calendar */
+.style2 {font-size: 12px; }
+.lienNoDeco {
+	text-decoration: none;
+	color: blue;
+}
+a img {
+	text-decoration: none;
+	border: none;
+}
+.present { background-color: #339933; }
+.absent { background-color: #CC0033; }
+.absent_demi { background-color: #FFCC33; }
+.weekend { background-color: #CECECE; }
+.ferie { background-color: #0000FF; }
+.infobulle{
+	position: absolute;	
+	visibility : hidden;
+	border: 1px solid Black;
+	padding: 5px;
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #FFFFCC;
+}
+/* end calendar */
+
+
+/* Date Calendar Picking */
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	display: none;
+	z-index: 999999;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	background-color: #333;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.ds_subhead {
+	background-color: #CCC;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 32px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #F3F3F3;
+} /* This hover code won't work for IE */
+
+/* Autocompletion */
+.update{
+	position:absolute;
+	width:150px;
+	background-color:white;
+	border:1px solid #888;
+	margin:0px;
+	padding:0px;
+	text-align: left;
+}
+
+.imageUtil {
+	width: 32px;
+	border: none;
+}
+.util {
+	font-weight:bold;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+	text-align: left;
+}
+
+
+#miniFicheUtil {
+	margin:0px;
+	padding:0px;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid black;
+	font-size:13px;
+}
+
+#miniFicheUtil:hover {
+	background-color: #ffb;
+	cursor: pointer;	
+}
+
+.autocompleteInput {
+	width: 150px;
+}
+
+/** fin autocompletion **/
+
+/* End Date Calendar Picking */
+
+

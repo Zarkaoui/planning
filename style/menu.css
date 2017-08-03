@@ -1,0 +1,334 @@
+/*
+Some CSS is from Orange HRM, available at:
+http://www.orangehrm.com
+
+*/
+
+
+
+/* Logout Menu */
+#option-menu-bar {
+	clear: both;
+}
+
+#option-menu,#option-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 11px;
+	text-align: right;
+}
+
+#option-menu li {
+	display: inline;
+	color: #444444;
+	font-weight: bold;
+	padding-right: 5px;
+	margin: 0px;
+}
+
+#option-menu li a {
+	color: #444444;
+}
+
+
+/* Menu */
+
+#menu, #menu ul /* Liste */	
+{
+	padding : 0; /* pas de marge intérieure */
+	margin : 0; /* ni extérieure */
+	list-style : none; /* on supprime le style par défault de la liste */
+	line-height : 27px; /* on défini une hauteur pour chaque élément */
+}
+
+#menu /* Ensemble du menu */
+{
+	font-weight : bold; /* on met le texte en gras */
+	font-family : Arial; /* on utilise Arial c'est plus beau ^^ */
+	font-size : 12px; /* hauteur du texte : 12 pixels */
+}
+
+#menu a /* Contenu des listes */
+{
+	display	: block; /* on change le type d'élément, les liens deviennent des balises de type block */
+	padding	: 0; /* aucune marge intérieure */
+	color : #000; /* couleur du texte */
+	text-decoration : none; /* on supprime le style par défault des liens (la pluspart du temps = souligné) */
+	width : 150px; /* largeur */
+	
+}
+
+#menu li /* Elements des listes */	
+{ 
+	float : left; 
+	/* pour ie qui ne reconnait pas "transparent" */
+	border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+	text-align: center;
+	font-family: Arial, sans-serif, Verdana;
+	font-variant: small-caps;
+	font-size: 13px;
+	background: transparent url("../images/menu/topdrop.png") top right;
+}
+
+#menu li:hover /* Elements des listes */	
+{ 
+	background: transparent url("../images/menu/topdrophov.png") top right;
+}
+
+/* ie ne reconnaissant pas le sélecteur ">" */
+html>body #menu li
+{
+	border-right: 1px solid transparent ; /* on met une bordure transparante à droite de chaque élément */
+}
+
+#menu li ul /* Sous-listes */
+{ 
+	position: absolute; /* Position absolu */
+	width: 150px; /* Largeur des sous-listes */
+	left: -999em; /* Hop, on envoi loin du champ de vision */
+}
+
+
+#menu li ul li /* Eléments de sous-listes */
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropparent.png") top right;
+}
+
+#menu li ul li:hover /* Eléments de sous-listes */
+{
+	background: transparent url("../images/menu/dropparenthov.png") top right;
+}
+
+#menu li ul li.drop /* Eléments de sous-listes sans fils*/
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropitem.png") top right;
+}
+
+#menu li ul li.drop:hover /* Eléments de sous-listes sans fils*/
+{
+	background: transparent url("../images/menu/dropitemhov.png") top right;
+}
+
+#menu li ul li ul li /* Eléments de sous-listes niveau 2 */
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropitem.png") top right;
+}
+
+#menu li ul li ul li:hover /* Eléments de sous-listes niveau 2 */
+{
+	background: transparent url("../images/menu/dropitemhov.png") top right;
+}
+
+/* ie ne reconnaissant pas le sélecteur ">" */
+html>body #menu li ul li		
+{
+	border-top : 1px solid transparent; /* on met une bordure transparante en haut de chaque élément */
+}
+
+#menu li ul ul 
+{
+	margin		: -27px 0 0 150px ; /* On décale les sous-sous-listes qu'elles ne soient pas au dessus des sous-listes */	
+	/* pour ie qui ne reconnait pas "transparent" (comme précédement) */
+	border-left	: 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */	
+}
+
+/* ie ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body #menu li ul ul		
+{
+	border-left	: 1px solid transparent ; /* on met une bordure transparante sur la gauche de chaque élément */
+}
+
+
+
+#menu li:hover ul ul, #menu li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
+{
+	left: -999em; /* On expédie les sous-sous-listes hors du champ de vision */
+}
+
+#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+	left: auto; /* Repositionnement normal */
+	min-height: 0; /* Corrige un bug */
+}
+
+
+a:hover
+{
+	font-weight: bold;
+}
+
+#menu li#admin a.l1_link { background: transparent url("../images/menu/icons/admin.gif") no-repeat center left; }
+#menu li#ent a.l2_link { background: transparent url("../images/menu/icons/ent.gif") no-repeat center left; }
+#menu li#entGen a.l2_link { background: transparent url("../images/menu/icons/entreprise.gif") no-repeat center left; }
+#menu li#entSucc a.l2_link { background: transparent url("../images/menu/icons/succursales.gif") no-repeat center left; }
+#menu li#postes a.l2_link { background: transparent url("../images/menu/icons/postes.gif") no-repeat center left; }
+#menu li#fonct a.l2_link { background: transparent url("../images/menu/icons/fonctions.gif") no-repeat center left; }
+#menu li#cat a.l2_link { background: transparent url("../images/menu/icons/qualification.gif") no-repeat center left; }
+#menu li#typeAbs a.l2_link { background: transparent url("../images/menu/icons/leaveMod.gif") no-repeat center left; }
+#menu li#sect a.l2_link { background: transparent url("../images/menu/icons/memberships.gif") no-repeat center left; }
+#menu li#perio a.l2_link { background: transparent url("../images/menu/icons/Project-Time.gif") no-repeat center left; }
+#menu li#util a.l2_link { background: transparent url("../images/menu/icons/customers.gif") no-repeat center left; }
+#menu li#util li#utilList a.l2_link { background: transparent url("../images/menu/icons/utilList.gif") no-repeat center left; }
+#menu li#util li#utilAdd a.l2_link { background: transparent url("../images/menu/icons/utilAdd.gif") no-repeat center left; }
+
+
+#menu li#empl a.l1_link { background: transparent url("../images/menu/icons/users.gif") no-repeat center left; }
+#menu li#emplList a.l2_link { background: transparent url("../images/menu/icons/EmployeeList.gif") no-repeat center left; }
+#menu li#emplAdd a.l2_link { background: transparent url("../images/menu/icons/empadd.gif") no-repeat center left; }
+#menu li#emplMod a.l2_link { background: transparent url("../images/menu/icons/emplMod.gif") no-repeat center left; }
+
+#menu li#abs a.l1_link { background: transparent url("../images/menu/icons/leaveList.gif") no-repeat center left; }
+#menu li#feries a.l2_link { background: transparent url("../images/menu/icons/feries.gif") no-repeat center left; }
+#menu li#absAssign a.l2_link { background: transparent url("../images/menu/icons/Assign-Leave.gif") no-repeat center left; }
+#menu li#absList a.l2_link { background: transparent url("../images/menu/icons/absList.gif") no-repeat center left; }
+#menu li#cal a.l2_link { background: transparent url("../images/menu/icons/calendar.png") no-repeat center left; }
+
+
+
+/***** Menu deroulants pour les tris de tableaux *******/
+.menuTab, .menuTab ul /* Liste */	
+{
+	padding : 0; /* pas de marge intérieure */
+	margin : 0; /* ni extérieure */
+	list-style : none; /* on supprime le style par défault de la liste */
+	line-height : 27px; /* on défini une hauteur pour chaque élément */
+}
+
+.menuTab /* Ensemble du menu */
+{
+	font-weight : bold; /* on met le texte en gras */
+	font-family : Arial; /* on utilise Arial c'est plus beau ^^ */
+	font-size : 12px; /* hauteur du texte : 12 pixels */
+}
+
+.menuTab a /* Contenu des listes */
+{
+	display	: block; /* on change le type d'élément, les liens deviennent des balises de type block */
+	padding	: 0; /* aucune marge intérieure */
+	color : #000; /* couleur du texte */
+	text-decoration : none; /* on supprime le style par défault des liens (la pluspart du temps = souligné) */
+	width : 100%; /* largeur */
+	min-width: 100px;
+	
+}
+
+.menuTab li /* Elements des listes */	
+{ 
+	float : left; 
+	/* pour ie qui ne reconnait pas "transparent" */
+	border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+	text-align: center;
+	font-family: Arial, sans-serif, Verdana;
+	font-size: 13px;
+	background: transparent url("../images/menu/topdrop2.png") top right;
+}
+
+.menuTab li:hover /* Elements des listes */	
+{ 
+	background: transparent url("../images/menu/topdrophov2.png") top right;
+}
+
+/** Plus large **/
+.menuTab li.grand /* Elements des listes */	
+{ 
+	float : left; 
+	/* pour ie qui ne reconnait pas "transparent" */
+	border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+	text-align: center;
+	font-family: Arial, sans-serif, Verdana;
+	font-size: 13px;
+	background: transparent url("../images/menu/topdrop.png") top right;
+}
+
+.menuTab li.grand:hover /* Elements des listes */	
+{ 
+	background: transparent url("../images/menu/topdrophov.png") top right;
+}
+
+
+/* ie ne reconnaissant pas le sélecteur ">" */
+html>body .menuTab li
+{
+	border-right: 1px solid transparent ; /* on met une bordure transparante à droite de chaque élément */
+}
+
+.menuTab li ul /* Sous-listes */
+{ 
+	position: absolute; /* Position absolu */
+	width: 150px; /* Largeur des sous-listes */
+	left: -999em; /* Hop, on envoi loin du champ de vision */
+}
+
+
+.menuTab li ul li /* Eléments de sous-listes */
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropparent2.png") top right;
+}
+
+.menuTab li ul li:hover /* Eléments de sous-listes */
+{
+	background: transparent url("../images/menu/dropparenthov2.png") top right;
+}
+
+.menuTab li ul li.drop /* Eléments de sous-listes sans fils*/
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropitem2.png") top right;
+}
+
+.menuTab li ul li.drop:hover /* Eléments de sous-listes sans fils*/
+{
+	background: transparent url("../images/menu/dropitemhov2.png") top right;
+}
+
+.menuTab li ul li ul li /* Eléments de sous-listes niveau 2 */
+{
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	background: transparent url("../images/menu/dropitem2.png") top right;
+}
+
+.menuTab li ul li ul li:hover /* Eléments de sous-listes niveau 2 */
+{
+	background: transparent url("../images/menu/dropitemhov2.png") top right;
+}
+
+/* ie ne reconnaissant pas le sélecteur ">" */
+html>body .menuTab li ul li		
+{
+	border-top : 1px solid transparent; /* on met une bordure transparante en haut de chaque élément */
+}
+
+.menuTab li ul ul 
+{
+	margin		: -27px 0 0 150px ; /* On décale les sous-sous-listes qu'elles ne soient pas au dessus des sous-listes */	
+	/* pour ie qui ne reconnait pas "transparent" (comme précédement) */
+	border-left	: 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */	
+}
+
+/* ie ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body .menuTab li ul ul		
+{
+	border-left	: 1px solid transparent ; /* on met une bordure transparante sur la gauche de chaque élément */
+}
+
+
+
+.menuTab li:hover ul ul, .menuTab li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
+{
+	left: -999em; /* On expédie les sous-sous-listes hors du champ de vision */
+}
+
+.menuTab li:hover ul, .menuTab li li:hover ul, .menuTab li.sfhover ul, .menuTab li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+	left: auto; /* Repositionnement normal */
+	min-height: 0; /* Corrige un bug */
+}
+
+
+

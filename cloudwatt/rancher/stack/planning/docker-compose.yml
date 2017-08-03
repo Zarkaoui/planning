@@ -1,0 +1,34 @@
+##################################################################
+# Planning POC service
+
+planning-poc:
+  restart: always
+  expose:
+  - 80
+  labels:
+    io.rancher.scheduler.affinity:host_label: type=frontend
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  hostname: planning-poc
+  image: ussoregistry.com:5000/poc/planning:1.0.3
+  links:
+   - planning-db:planning-db
+
+
+##################################################################
+# Load Balancer external HTTPS
+
+load-ssl:
+  ports:
+  - 443:8080
+  restart: always
+  labels:
+    io.rancher.scheduler.global: 'true'
+    io.rancher.scheduler.affinity:host_label: type=frontend
+    io.rancher.loadbalancer.ssl.ports: '443'
+    io.rancher.loadbalancer.target.planning-poc: planning-poc.int.idaas.orange.com:8080
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - planning-poc:planning-poc
+  stdin_open: true
+

@@ -1,0 +1,196 @@
+apiVersion: v1
+kind: Template
+metadata:
+  creationTimestamp: null
+  name: planningpoc
+objects:
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/image.dockerRepositoryCheck: 2017-06-21T08:05:48Z
+    creationTimestamp: null
+    generation: 2
+    labels:
+      app: planningpocimg
+    name: planningpoc
+  spec:
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: dqcs6356/planningpoc:latest
+      generation: 2
+      importPolicy: {}
+      name: latest
+  status:
+    dockerImageRepository: ""
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    labels:
+      app: planningpoc
+    name: planningpoc
+  spec:
+    output:
+      to:
+        kind: ImageStreamTag
+        name: planningpoc:latest
+    postCommit: {}
+    resources: {}
+    source:
+      git:
+        ref: master
+        uri: https://gitlab.forge.orange-labs.fr/crnr4278/planningabsences-poc.git
+      secrets: null
+      sourceSecret:
+        name: mysecret
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:5.5
+          namespace: openshift
+      type: Source
+    triggers:
+    - generic:
+        secret: 10ddf2ac44335240
+      type: Generic
+    - github:
+        secret: a62d51c28de66e4b
+      type: GitHub
+    - imageChange: {}
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    lastVersion: 0
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    generation: 4
+    labels:
+      app: planningpoc
+    name: planningpoc
+  spec:
+    replicas: 1
+    selector:
+      deploymentconfig: planningpoc
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: planningpoc
+          deploymentconfig: planningpoc
+      spec:
+        containers:
+        - image: dqcs6356/planningpoc
+          imagePullPolicy: Always
+          name: planningpoc
+          env:
+            - name: APP_VERSION
+              value: "${APP_VERSION}"
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - planningpoc
+        from:
+          kind: ImageStreamTag
+          name: planningpoc:latest
+      type: ImageChange
+    - type: ConfigChange
+  status: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    labels:
+      app: planningpoc
+    name: planningpoc
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: planningpoc
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    labels:
+      app: planningpoc
+    name: planningpoc
+  spec:
+    host: planning-absences-poc-${COLOR}.kermit.itn.intraorange
+    port:
+      targetPort: 8080-tcp
+    tls:
+      termination: edge
+    to:
+      kind: Service
+      name: planningpoc
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: 2017-06-21T08:05:48Z
+        status: "True"
+        type: Admitted
+      host: planning-absences-poc.kermit.itn.intraorange
+      routerName: router-gin
+
+parameters:
+  - name: COLOR
+    displayName: Version of the application
+    description: Version of the application
+    value: "blue"
+
+  - name: APP_VERSION
+    displayName: Version of the application
+    description: Version of the application
+    value: "1.0.0"
+

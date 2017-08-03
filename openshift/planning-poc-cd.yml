@@ -1,0 +1,130 @@
+apiVersion: v1
+kind: Template
+metadata:
+  creationTimestamp: null
+  name: planningpoc-${COLOR}
+objects:
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    generation: 4
+    labels:
+      app: planningpoc-${COLOR}
+    name: planningpoc-${COLOR}
+  spec:
+    replicas: 1
+    selector:
+      deploymentconfig: planningpoc-${COLOR}
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: planningpoc-${COLOR}
+          deploymentconfig: planningpoc-${COLOR}
+      spec:
+        containers:
+        - image: planningpoc
+          imagePullPolicy: Always
+          name: planningpoc-${COLOR}
+          env:
+            - name: APP_VERSION
+              value: "v1.0.0"
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - planningpoc-${COLOR}
+        from:
+          kind: ImageStreamTag
+          name: planningpoc:${IMAGE_VERSION}
+      type: ImageChange
+    - type: ConfigChange
+  status: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    labels:
+      app: planningpoc-${COLOR}
+    name: planningpoc-${COLOR}
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: planningpoc-${COLOR}
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: null
+    labels:
+      app: planningpoc-${COLOR}
+    name: planningpoc-${COLOR}
+  spec:
+    host: planning-absences-poc-${COLOR}.kermit.itn.intraorange
+    port:
+      targetPort: 8080-tcp
+    tls:
+      termination: edge
+    to:
+      kind: Service
+      name: planningpoc-${COLOR}
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: 2017-06-21T08:05:48Z
+        status: "True"
+        type: Admitted
+      host: planning-absences-poc-${COLOR}.kermit.itn.intraorange
+      routerName: router-gin
+
+parameters:
+  - name: COLOR
+    displayName: Version of the application
+    description: Version of the application
+    value: "blue"
+
+  - name: IMAGE_VERSION
+    displayName: Version of the application
+    description: Version of the application
+    value: "1.0.0-1"

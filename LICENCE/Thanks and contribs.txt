@@ -1,0 +1,22 @@
+PlanningAbsences
+
+Merci a tous ceux qui ont participe au developpement du Planning des Absences,
+et plus particulierement: 
+
+ 
+* "Features":
+- Traduction en Allemand: Andreas Woll ( awoll )
+- Numeros de semaine dans le calendrier: Jacques Lagorce ( lomalatio ) 
+
+
+* Donations:
+- Andreas Woll
+
+
+* Signalisations de bugs et retours:
+- Studio93
+- Hubert Bannwarth
+- Dominik Slabicki
+
+------
+J-C. P. "jisse44"

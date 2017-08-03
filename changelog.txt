@@ -1,0 +1,153 @@
+
+PlanningAbsences by J-C. Prin
+************************************************************************************************************
+04-11-2016 - 1.0.3
+
+- Encore un correctif pour les periodictes | Another bugfix for periodicity
+
+
+************************************************************************************************************
+13-03-2014 - 1.0.2
+
+- Correction de l'installation pour les périodicités | Bugfix for periodicity during install scripts
+
+- Correction de l'affichage des noms/prénoms pour le calendrier | Bugfix for long names/surnames in calendar
+
+
+************************************************************************************************************
+22-02-2013 - 1.0.2
+
+- Correction d'un bug lors de la suppression de poste | Bugfix when deleting Job
+
+
+************************************************************************************************************
+24-12-2012 - 1.0.1
+
+- Joyeux Noel | Merry Christmas ;)
+
+- Changements au niveau des periodicites (date de debut et de fin) | Changes for periodicity (start/end dates)
+
+
+************************************************************************************************************
+08-11-2012 - 1.0
+
+- Version Finale | Final Release
+
+- Obligation d'avoir au moins une periodicite | Must have at least one periodicity
+
+- Ajout de la Suppression de Postes | Add possibility to delete Jobs
+
+- Bugs mineurs | Minor changes
+
+************************************************************************************************************
+20-08-2012 - 1.0-RC4
+
+- Passage en version 1.0-RC4 (Release Candidate 4)
+
+- Ajout de l'export du calendrier en format tableur (ods) | Add possibility to export calendar in spreadsheet file (ods)
+
+- Ajout de la classe PHPExcel (From http://phpexcel.codeplex.com/) | Add PHPExcel class (From http://phpexcel.codeplex.com/)
+
+- Correction de bugs d'encodages | Some encoding fixes
+
+- Ajout de la langue Allemend | Add German language
+ (thanks to Andreas Woll: http://sourceforge.net/projects/planningabsence/forums/forum/1696414/topic/5397582)
+
+- Affichage des numeros de semaine dans le calendrier | Display week numbers in calendar
+ (thanks to Jacques Lagorce : http://sourceforge.net/tracker/?func=detail&aid=3555111&group_id=514202&atid=2090000)
+
+
+
+************************************************************************************************************
+26-04-2012 - 1.0-RC3
+
+- Passage en version 1.0-RC3 (Release Candidate 3)
+
+- Ajout de la Modification d'une absence | Add possibility to modify absence
+
+- Correction d'un bug d'affichage dans le calendrier pour les jours Feries | Fix calendar display for Public Holiday
+
+
+************************************************************************************************************
+06-03-2012
+
+- Passage en version 1.0-RC2 (Release Candidate 2)
+
+- Correction d'un bug sur les Periodicites d'absences, et creation d'un patch
+
+
+************************************************************************************************************
+24-02-2012
+
+- Passage en version 1.0-RC1 (Release Candidate 1)
+
+- Correction de bugs de langue et d'encodage UTF8, ainsi que de styles CSS
+
+
+************************************************************************************************************
+
+12-09-2011
+
+- Correction de bug pour la génération du PDF suite aux changements du 19-08-2011
+
+Fichier modifié:
+	/pages/calendrierToPDF.php
+
+************************************************************************************************************
+19-08-2011
+
+- Optimisation de l'affichage du calendrier des absences (nettoyage et regroupemet des requetes SQL)
+
+- Bugs d'encodage
+
+Fichiers modifiés:
+	/include/fonctions.php
+	/pages/afficheCalendrier.php
+	/pages/listeAbsences.php
+	/pages/entrepriseAjoutSuccursale.php
+	/pages/entrepriseGeneral.php
+
+************************************************************************************************************
+25-05-2011
+
+- Ajout d'un champ d'autocompletion pour le tri sur les utilisateurs pour la liste des absences, et 
+correction d'un bug de langue
+
+Fichiers modifiés:
+	/index.php
+	/pages/afficheCalendrier.php
+	/pages/listeAbsences.php
+	/style/style.css
+
+Nouveaux fichiers:
+	/js/autocompletion/*.js
+	/pages/afficheCalendrierAjax.php
+	/pages/listeAbsencesAjax.php
+
+************************************************************************************************************
+22-03-2011
+
+- Correction de bug pour l'affichage des jours fériés non fixes + infobulle a l'affichage du calendrier
+- Correction de bug d'affichage de legende du calendrier
+
+Fichiers modifiés:
+	/include/fonctions.php
+	/pages/afficheCalendrier.php	
+
+************************************************************************************************************
+21-03-2011
+
+- Modification des fichiers: 
+	/install/base.sql
+	/install/dbSetup.php
+	/pages/affecteAbsence.php
+	/pages/typeAbsences.php
+
+Objet de la modification: ajout d'un champ 'type_commentaire' afin de determiner si le type d'absence peut
+accepter un commentaire lors d'une affectation
+
+************************************************************************************************************
+17-03-2011
+
+- Publication du PlanningAbsences en version 1.0beta
+

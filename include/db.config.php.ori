@@ -1,0 +1,12 @@
+<?php
+
+//database server
+define('DB_SERVER', "null");
+//database login name
+define('DB_USER', "null");
+//database login password
+define('DB_PASS', "null");
+//database name
+define('DB_DATABASE', "null");
+
+?>

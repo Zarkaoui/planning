@@ -1,0 +1,16 @@
+planning-poc:
+  upgrade_strategy:
+    start_first: true
+  scale: 2
+  health_check:
+    port: 8080
+    interval: 5000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+    request_line: GET / HTTP/1.0
+
+load-ssl:
+  default_cert: sso.int.idaas.orange.com_G-IGCGROUPE-G2-SERVEURS-AUTH-CERT_pem.cer
